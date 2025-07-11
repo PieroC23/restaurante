@@ -1,0 +1,385 @@
+/* Establecemos la fuente global para todo el sitio */
+body {
+  font-family: 'Times New Roman', serif;
+  margin: 0; /* Elimina los márgenes por defecto */
+  background-color: #f4f4f4;
+  overflow-x: hidden; /* Evita el desplazamiento horizontal */
+  box-sizing: border-box;
+}
+/* Barra de navegación */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 30px 70px; /* Aumentamos el padding de la barra de navegación */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  flex-wrap: wrap;
+}
+
+.navbar-logo h1 {
+  font-size: 2.5rem;  /* Aumentamos el tamaño del logo */
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.navbar-links ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;  /* Aumentamos el espacio entre los enlaces */
+}
+
+.navbar-links ul li a {
+  text-decoration: none;
+  font-size: 1.5rem;  /* Aumentamos el tamaño de los enlaces */
+  color: #555;
+  transition: color 0.3s;
+}
+
+.navbar-links ul li a:hover {
+  color: #ff6f61;
+}
+
+.navbar-login .login-button {
+  text-decoration: none;
+  font-size: 1.3rem;  /* Aumentamos el tamaño de la fuente del botón */
+  color: #fff;
+  background-color: #333;
+  padding: 15px 30px;  /* Aumentamos el padding */
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.navbar-login .login-button:hover {
+  background-color: #ff6f61;
+}
+
+/* Estilo para la sección Hero */
+.hero-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  padding: 50px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  margin-top: 80px;
+  margin-bottom: 50px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  flex-wrap: wrap;
+}
+
+/* Contenedor para el texto y la imagen */
+.hero-content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+/* Estilo para el texto de la izquierda */
+.hero-text {
+  max-width: 55%;  /* Reducido a 55% para más espacio para la imagen */
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 50px;
+  z-index: 10;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;  /* Ajustamos el tamaño del título */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 2rem;  /* Ajustamos el tamaño del párrafo */
+  color: #777;
+  margin-bottom: 30px;
+}
+
+.hero-buttons .btn {
+  padding: 15px 30px;  /* Aumentamos el tamaño de los botones */
+  margin-right: 15px;
+  font-size: 1.2rem;  /* Aumentamos el tamaño de la fuente de los botones */
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.hero-buttons .btn-primary {
+  background-color: #ff6f61;
+  color: white;
+}
+
+.hero-buttons .btn-secondary {
+  background-color: #5f6368;
+  color: white;
+}
+
+/* Imagen grande */
+.hero-image-large {
+  position: absolute;
+  right: 0;  /* Alineamos la imagen a la derecha */
+  top: 0;  /* Ajustamos la posición de la imagen */
+  width: 50%;  /* Debería ser proporcional al 50% de la pantalla */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.hero-image-large .large-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Imagen pequeña del plato */
+.hero-image-small {
+  position: absolute;
+  bottom: 10%; /* Subimos la imagen para que no se sobreponga a la sección "Sobre Nosotros" */
+  left: 57%;
+  width: 550px; /* Aumentamos el tamaño de la imagen pequeña */
+  height: auto;
+  border-radius: 5px;
+  z-index: 1;
+  transform: translateX(-50%); /* Centrado exacto */
+}
+
+
+/* Eliminar el botón de "Nuestra Galería" */
+.hero-image-large .btn-gallery {
+  display: none; /* Eliminamos el botón */
+}
+
+/* Cambio de color del botón cuando pasa el mouse */
+.hero-image-large .btn-gallery:hover {
+  background-color: #e65c52;
+}
+
+/* Asegurar que el texto no se sobreponga a la imagen */
+.hero-text h1, .hero-text p {
+  max-width: 80%; /* Limitamos el ancho del texto para evitar que choque con la imagen */
+  margin-right: 0;
+}
+
+/* Media Queries: Aseguramos que todo esté bien ajustado en pantallas más pequeñas */
+@media (max-width: 768px) {
+  .hero-container {
+    padding: 20px;  /* Menos espacio alrededor */
+    height: auto;  /* Ajustamos la altura para pantallas pequeñas */
+  }
+
+  .hero-text {
+    max-width: 100%;  /* La imagen ocupará más espacio en pantallas pequeñas */
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;  /* Ajuste de tamaño del título */
+  }
+
+  .hero-text p {
+    font-size: 1.5rem;  /* Ajuste de tamaño del párrafo */
+  }
+
+  .hero-buttons .btn {
+    padding: 12px 20px;  /* Ajustamos el tamaño de los botones */
+    font-size: 1rem;
+  }
+
+  .hero-image-large {
+    width: 80%;  /* Ajustamos la imagen para pantallas pequeñas */
+    position: relative;
+    top: 0;
+  }
+
+  .hero-image-small {
+    width: 400px;  /* Ajustamos el tamaño de la imagen pequeña */
+    bottom: 0;
+    left: 50%;
+  }
+}
+
+/* Estilo para la sección "Sobre Nosotros" */
+.sobre-nosotros {
+  background-color: #f4f4f4;
+  padding: 5% 2%;  /* Ajuste el espaciado alrededor de la sección */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+  min-height: 100vh;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sobre-nosotros h2 {
+  font-size: 4rem;  /* Aumentamos el tamaño del título "Sobre Nosotros" */
+  font-weight: bold;
+  color: #ff6f61;
+  margin-bottom: 30px;
+  width: 100%;
+  padding-top: 30px;
+}
+
+/* Contenedor para la imagen y las cajas de texto */
+.sobre-nosotros .about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85%;  /* Reducimos el ancho para que no se vea tan grande */
+  margin: 0 auto;
+  gap: 20px;
+  flex-wrap: wrap; /* Permite que los elementos se muevan si no caben */
+}
+
+/* Ajustamos las cajas de texto */
+.sobre-nosotros .card {
+  background-color: white;
+  padding: 30px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;  /* Tamaño máximo para las tarjetas */
+  text-align: left;
+}
+
+.sobre-nosotros h3 {
+  font-size: 2.5rem;  /* Aumentamos el tamaño de los subtítulos dentro de las cajas */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.sobre-nosotros p {
+  font-size: 1.5rem;  /* Ajustamos el tamaño del texto dentro de las cajas */
+  color: #777;
+  line-height: 1.8;
+}
+
+.sobre-nosotros .about-image {
+  width: 30%;  /* Ajustamos el tamaño de la imagen */
+  padding-left: 20px;
+}
+
+.sobre-nosotros .about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+  .sobre-nosotros .about-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sobre-nosotros .about-text {
+    width: 100%;
+    text-align: center;
+  }
+
+  .sobre-nosotros .about-image {
+    width: 100%;
+    padding-left: 0;
+    margin-top: 20px;
+  }
+
+  .sobre-nosotros .about-image img {
+    width: 80%;
+  }
+
+  .sobre-nosotros h2 {
+    font-size: 3rem;
+  }
+
+  .sobre-nosotros .card {
+    max-width: 100%;
+  }
+
+  .sobre-nosotros h3 {
+    font-size: 2rem;
+  }
+
+  .sobre-nosotros p {
+    font-size: 1.3rem;
+  }
+}
+
+/* Menú Interactivo */
+.menu-section {
+  padding: 40px 20px;
+  background-color: #fff8e1;
+  height: 100vh; /* La sección de menú ocupa toda la pantalla */
+  scroll-snap-align: start; /* Alinea la sección al hacer scroll */
+}
+
+.menu-day {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 19%;
+  margin: 10px;
+}
+
+.day-title {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #d2691e;
+}
+
+.image-slider img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.arrow-left, .arrow-right {
+  font-size: 2rem;
+  color: #d2691e;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.arrow-left {
+  left: 0;
+}
+
+.arrow-right {
+  right: 0;
+}
+
+.arrow-left:hover, .arrow-right:hover {
+  color: #c45c1f;
+}

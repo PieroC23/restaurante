@@ -1,0 +1,164 @@
+/* Ajuste para el contenedor principal */
+.menu-container {
+  padding: 40px;
+  background-color: #fff8e1;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+  min-height: 100vh; /* Asegura que ocupe toda la pantalla */
+}
+
+/* Título del Menú, igual que el de "Sobre Nosotros" */
+.menu-title {
+  text-align: center;
+  font-size: 3rem;
+  color: #ff6f61;
+  margin-bottom: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Contenedor para los días de la semana */
+.days-of-week {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  gap: 20px;
+}
+
+/* Ajustes para las cartas */
+.menu-cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Cada carta de menú */
+.menu-card {
+  width: 18%;
+  background-color: #f8f8f8;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 380px;  /* Ajustamos la altura mínima para que la carta no se vea recortada */
+  justify-content: space-between;  /* Asegura que los elementos dentro de la carta se distribuyan de manera uniforme */
+  overflow: hidden;  /* Previene el desbordamiento del contenido */
+}
+
+.menu-card:hover {
+  transform: scale(1.05);
+}
+
+/* Títulos dentro de las cartas */
+.menu-category h5 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Ajuste para las imágenes dentro de las cartas */
+.image-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-direction: column;
+  max-width: 160px;
+  margin: 0 auto;
+}
+
+.image-slider img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #d2691e;
+  margin-bottom: 10px;
+}
+
+.arrow-left,
+.arrow-right {
+  font-size: 2rem;
+  color: #d2691e;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.arrow-left {
+  left: -30px;
+}
+
+.arrow-right {
+  right: -30px;
+}
+
+.arrow-left:hover, .arrow-right:hover {
+  color: #c45c1f;
+}
+
+/* Nombres de los platos debajo de las imágenes */
+.menu-category p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+/* Botón Pedir */
+.btn-pedir {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  font-size: 1.2rem;
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-pedir:hover {
+  background-color: #e65c52;
+}
+
+/* Ajustes para los nombres debajo de las imágenes de Entradas y Segundos */
+.menu-category p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Mejor distribución en pantallas pequeñas */
+@media (max-width: 768px) {
+  .menu-card {
+    width: 45%;
+    margin-bottom: 15px;
+  }
+
+  .days-of-week {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .menu-title {
+    font-size: 2.5rem;
+  }
+}

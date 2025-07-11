@@ -1,8 +1,13 @@
-import { ApplicationConfig } from '@angular/core';
-import { provideRouter } from '@angular/router';
+export const appConfig = {
+  // URL base de tu API de Spring Boot
+  apiUrl: 'http://localhost:8080',  // Asumiendo que Spring Boot corre en localhost:8080
 
-import { routes } from './app.routes';
+  // Título de la aplicación
+  appTitle: 'Sazón Rosita',
 
-export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes)]
+  // Si tienes algún token de autenticación (por ejemplo, para JWT), lo puedes colocar aquí
+  authToken: '',  // Vacío, ya que el token vendría de un servicio de autenticación
+
+  // Configuración para habilitar/deshabilitar el modo de desarrollo
+  isDevMode: true,  // Cambiar a false en producción
 };
